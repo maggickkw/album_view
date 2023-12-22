@@ -1,9 +1,8 @@
-// slices/albumSlice.ts
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface AlbumState {
   albums: string[];
-  photos: any[]; // Update the type as needed for your photo data
+  photos: any[];
 }
 
 const initialState: AlbumState = {
@@ -12,7 +11,7 @@ const initialState: AlbumState = {
 };
 
 const albumSlice = createSlice({
-  name: 'album',
+  name: "album",
   initialState,
   reducers: {
     setAlbums(state, action: PayloadAction<string[]>) {
@@ -25,13 +24,18 @@ const albumSlice = createSlice({
       state.photos = action.payload;
     },
     removePhoto(state, action: PayloadAction<number>) {
-      state.photos = state.photos.filter((photo) => photo.id !== action.payload);
+      state.photos = state.photos.filter(
+        (photo) => photo.id !== action.payload
+      );
     },
   },
 });
 
-export const { setAlbums, removeAlbum, setPhotos, removePhoto } = albumSlice.actions;
-export const selectAlbums = (state: { album: AlbumState }) => state.album.albums;
-export const selectPhotos = (state: { album: AlbumState }) => state.album.photos;
+export const { setAlbums, removeAlbum, setPhotos, removePhoto } =
+  albumSlice.actions;
+export const selectAlbums = (state: { album: AlbumState }) =>
+  state.album.albums;
+export const selectPhotos = (state: { album: AlbumState }) =>
+  state.album.photos;
 
 export default albumSlice.reducer;
