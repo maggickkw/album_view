@@ -34,7 +34,7 @@ const AlbumListScreen: React.FC = () => {
     <TouchableOpacity
       style={styles.gridItem}
       onPress={() => handleAlbumPress(item)}>
-      {/* <Image source={require('./path/to/your/image.png')} style={styles.albumImage} /> Replace with your image path */}
+      <Image source={require('./path/to/your/image.png')} style={styles.albumImage} />
       <List.Item title={item.title} />
     </TouchableOpacity>
   );

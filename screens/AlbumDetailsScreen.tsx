@@ -3,7 +3,7 @@ import { FlatList, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { List } from "react-native-paper";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { setPhotos, removePhoto, selectPhotos } from "../slices/albumSlice"; // Import from albumSlice
+import { setPhotos, removePhoto, selectPhotos } from "../slices/albumSlice";
 
 const AlbumDetailsScreen: React.FC<{ route: any }> = ({ route }) => {
   const { album } = route.params;
@@ -38,7 +38,7 @@ const AlbumDetailsScreen: React.FC<{ route: any }> = ({ route }) => {
 
   const renderGridItem = ({ item }: { item: any }) => (
     <TouchableOpacity style={styles.gridItem} onPress={() => {}}>
-      {/* <Image source={{ uri: item.thumbnailUrl }} style={styles.photoImage} /> */}
+      <Image source={{ uri: item.thumbnailUrl }} style={styles.photoImage} />
       <List.Item
         title={item.title}
         right={() => (
